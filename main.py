@@ -43,6 +43,8 @@ class Game:
             self.render()
             self.clock.tick(60)
 
-game = Game()
-game.run()
-pygame.quit()
+if __name__ == "__main__":
+    game = Game()
+    game.run()
+    pygame.quit()
+
