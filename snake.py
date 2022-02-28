@@ -1,5 +1,6 @@
 import pygame
 
+
 class Snake:
     def __init__(self, start_x, start_y, game):
         self.window_size = game.window_size
@@ -18,7 +19,6 @@ class Snake:
             self.apple.eat()
             self.location.append(last)
             self.game.grow_apple()
-
 
     def render(self, screen):
         for x, y in self.location:
