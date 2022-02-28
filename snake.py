@@ -1,5 +1,6 @@
 import pygame
 
+
 class Snake:
     def __init__(self, start_x, start_y, game):
         self.window_size = game.window_size

@@ -1,5 +1,5 @@
 import pygame
-import random
+
 
 class Apple:
     def __init__(self, location, tree):

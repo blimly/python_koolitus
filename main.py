@@ -15,6 +15,7 @@ class Game:
         self.end_surface.fill((255, 0, 0))
         self.clock = pygame.time.Clock()
         self.running = True
+        self.apple = None
         self.snake = Snake(120, 120, self)
         self.trees = [
                         Tree((320, 480), (0, -1), 50),
@@ -43,7 +44,6 @@ class Game:
                     self.snake.dir = (0, -1)
                 elif event.key == pygame.K_b:
                     random.choice(self.trees).branch()
-                    
 
     def update(self):
         self.snake.update()
@@ -53,13 +53,13 @@ class Game:
                 self.running = False
 
     def render(self):
-        self.window.fill((51,51,51))
+        self.window.fill((51, 51, 51))
         [tree.render(self.window) for tree in self.trees]
         self.snake.render(self.window)
 
         if self.state == "end":
             self.end_surface.set_alpha(self.end_counter)
-            self.window.blit(self.end_surface, (0,0))
+            self.window.blit(self.end_surface, (0, 0))
 
         pygame.display.update()
 

@@ -5,16 +5,16 @@ from apple import Apple
 
 
 class Tree:
-
     ROTATE = 30
     SMALLER = 0.9
+
     def __init__(self, start, direction, length):
         self.start = start
         self.direction = Vector2(direction)
         self.length = length
         self.branches = []
         self.end_pos = (self.start[0] + self.direction.x * self.length, 
-                   self.start[1] + self.direction.y * self.length)
+                        self.start[1] + self.direction.y * self.length)
         self.apple = None
 
     def render(self, screen):
@@ -35,5 +35,3 @@ class Tree:
             return random.choice(self.branches).grow()
         self.apple = Apple(self.end_pos, self)
         return self.apple
-
-
