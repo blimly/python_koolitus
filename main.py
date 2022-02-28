@@ -32,8 +32,8 @@ class Game:
         pass
 
     def render(self):
-        self.window.fill((51,51,51))
-        pygame.draw.rect(self.window, (0,0,200), (self.x, self.y, 40, 40))
+        self.window.fill((51, 51, 51))
+        pygame.draw.rect(self.window, (0, 0, 200), (self.x, self.y, 40, 40))
         pygame.display.update()
 
     def run(self):
@@ -42,6 +42,7 @@ class Game:
             self.update()
             self.render()
             self.clock.tick(60)
+
 
 if __name__ == '__main__':
     game = Game()
