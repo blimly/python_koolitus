@@ -40,12 +40,12 @@ class Game:
                 self.running = False
 
     def render(self):
-        self.window.fill((51,51,51))
+        self.window.fill((51, 51, 51))
         self.snake.render(self.window)
 
         if self.state == "end":
             self.end_surface.set_alpha(self.end_counter)
-            self.window.blit(self.end_surface, (0,0))
+            self.window.blit(self.end_surface, (0, 0))
 
         pygame.display.update()
 
@@ -55,6 +55,7 @@ class Game:
             self.update()
             self.render()
             self.clock.tick(6)
+
 
 if __name__ == '__main__':
     game = Game()

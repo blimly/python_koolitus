@@ -1,5 +1,6 @@
 import pygame
 
+
 class Snake:
     def __init__(self, start_x, start_y):
         self.size = 20
