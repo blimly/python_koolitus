@@ -54,7 +54,7 @@ class Game:
 
         if self.state == "end":
             self.end_surface.set_alpha(self.end_counter)
-            self.window.blit(self.end_surface, (0,0))
+            self.window.blit(self.end_surface, (0, 0))
 
         pygame.display.update()
 
