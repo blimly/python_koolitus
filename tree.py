@@ -33,5 +33,5 @@ class Tree:
     def grow(self):
         if self.branches:
             return random.choice(self.branches).grow()
-        self.apple = Apple(self.end_pos, self)
+        self.apple = Apple(self.end_pos)
         return self.apple
