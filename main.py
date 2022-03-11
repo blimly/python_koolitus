@@ -42,8 +42,6 @@ class Game:
                     self.snake.dir = (0, 1)
                 elif event.key == pygame.K_UP:
                     self.snake.dir = (0, -1)
-                elif event.key == pygame.K_b:
-                    random.choice(self.trees).branch()
 
     def update(self):
         self.snake.update()
