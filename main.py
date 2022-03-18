@@ -6,7 +6,11 @@ import random
 
 class Game:
     def __init__(self):
+        self.background_music_file = "expanse_terminal.wav"
         pygame.init()
+        pygame.mixer.init()
+        pygame.mixer.music.load(self.background_music_file)
+        pygame.mixer.music.play(-1)
         self.state = "game"
         self.end_counter = 0
         self.window_size = (640, 480)
