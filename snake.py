@@ -31,8 +31,8 @@ class Snake:
     def check_walls(self):
         head = self.location[0]
         if head[0] < 0 or head[1] < 0 or head[0] >= self.window_size[0] or head[1] >= self.window_size[1]:
-            self.game.state = "end"
+            self.game.enter_state("end")
 
     def check_body(self):
         if len(self.location) != len(set(self.location)):
-            self.game.state = "end"
+            self.game.enter_state("end")

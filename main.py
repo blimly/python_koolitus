@@ -7,10 +7,10 @@ import random
 class Game:
     def __init__(self):
         self.background_music_file = "expanse_terminal.wav"
+        self.game_over_music_file = "game_over.wav"
         pygame.init()
         pygame.mixer.init()
-        pygame.mixer.music.load(self.background_music_file)
-        pygame.mixer.music.play(-1)
+        pygame.mixer.Channel(0).play(pygame.mixer.Sound(self.background_music_file), loops=-1)
         self.state = "game"
         self.end_counter = 0
         self.window_size = (640, 480)
@@ -29,6 +29,12 @@ class Game:
                      ]
         self.grow_apple()
 
+    def enter_state(self, state):
+        if state == "end":
+            if self.state != "end":
+                pygame.mixer.Channel(2).play(pygame.mixer.Sound(self.game_over_music_file))
+        self.state = state
+
     def event(self):
         event_list = pygame.event.get()
         for event in event_list:
@@ -37,7 +43,7 @@ class Game:
                 break
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    self.state = "end"
+                    self.enter_state("end")
                 elif event.key == pygame.K_RIGHT and self.snake.dir != (-1, 0):
                     self.snake.dir = (1, 0)
                 elif event.key == pygame.K_LEFT and self.snake.dir != (1, 0):
