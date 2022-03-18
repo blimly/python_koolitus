@@ -77,7 +77,7 @@ class Game:
             self.event()
             self.update()
             self.render()
-            self.clock.tick(6)
+            self.clock.tick(3)
 
     def grow_apple(self):
         self.apple = random.choice(self.trees).grow()
