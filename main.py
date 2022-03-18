@@ -64,8 +64,8 @@ class Game:
 
     def render(self):
         self.window.fill((51, 51, 51))
-        [tree.render(self.window) for tree in self.trees]
         self.snake.render(self.window)
+        [tree.render(self.window) for tree in self.trees]
 
         if self.state == "end":
             self.end_surface.set_alpha(self.end_counter)
@@ -78,7 +78,7 @@ class Game:
             self.event()
             self.update()
             self.render()
-            self.clock.tick(max(6, math.sqrt(len(self.snake.location))))
+            self.clock.tick(max(10, 1.4 * math.sqrt(len(self.snake.location))))
 
     def grow_apple(self):
         self.apple = random.choice(self.trees).grow()
