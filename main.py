@@ -37,6 +37,7 @@ class Game:
 
     def event(self):
         event_list = pygame.event.get()
+        prev_dir = self.snake.dir
         for event in event_list:
             if event.type == pygame.QUIT:
                 self.running = False
@@ -44,13 +45,13 @@ class Game:
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     self.enter_state("end")
-                elif event.key == pygame.K_RIGHT and self.snake.dir != (-1, 0):
+                elif event.key == pygame.K_RIGHT and prev_dir != (-1, 0):
                     self.snake.dir = (1, 0)
-                elif event.key == pygame.K_LEFT and self.snake.dir != (1, 0):
+                elif event.key == pygame.K_LEFT and prev_dir != (1, 0):
                     self.snake.dir = (-1, 0)
-                elif event.key == pygame.K_DOWN and self.snake.dir != (0, -1):
+                elif event.key == pygame.K_DOWN and prev_dir != (0, -1):
                     self.snake.dir = (0, 1)
-                elif event.key == pygame.K_UP and self.snake.dir != (0, 1):
+                elif event.key == pygame.K_UP and prev_dir != (0, 1):
                     self.snake.dir = (0, -1)
 
     def update(self):
