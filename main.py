@@ -2,6 +2,7 @@ import pygame
 from snake import Snake
 from tree import Tree
 import random
+import math
 
 
 class Game:
@@ -77,7 +78,7 @@ class Game:
             self.event()
             self.update()
             self.render()
-            self.clock.tick(3)
+            self.clock.tick(max(6, math.sqrt(len(self.snake.location))))
 
     def grow_apple(self):
         self.apple = random.choice(self.trees).grow()
