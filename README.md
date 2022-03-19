@@ -42,9 +42,9 @@ There should be 2 snakes, one controlled with arrow keys, one with WASD. Make th
 
 ## Helpful links
 #### Sound
-[sfxr](https://sfxr.me/)
-[beepbox](https://www.beepbox.co/)
+- [sfxr](https://sfxr.me/)
+- [beepbox](https://www.beepbox.co/)
 
 #### Graphics
-[jspain](https://jspaint.app/)
-[OpenGameArt](https://opengameart.org/)
+- [jspain](https://jspaint.app/)
+- [OpenGameArt](https://opengameart.org/)
