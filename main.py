@@ -26,10 +26,12 @@ class Main:
         if screen == "game":
             self.active_screen = "menu"
 
-    def start(self, screen):
-        if screen == "game":
-            self.screens["game"] = Game(self, self.window_size)
-        self.active_screen = screen
+    def start(self, mode):
+        if mode == "single player":
+            self.screens["game"] = Game(self, self.window_size, 1)
+        elif mode == "multiplayer":
+            self.screens["game"] = Game(self, self.window_size, 2)
+        self.active_screen = "game"
 
     def event(self):
         event_list = pygame.event.get()

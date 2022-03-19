@@ -7,7 +7,8 @@ class Menu:
         self.parent_size = parent_size
         self.font = pygame.font.SysFont('Comic Sans MS', 30)
         self.buttons = {
-            "game": ["Start game", (self.parent_size[0] // 2 - 100, self.parent_size[1] // 2 - 25, 200, 50)]
+            "single player": ["Solo", (self.parent_size[0] // 2 - 100, self.parent_size[1] // 2 - 75, 200, 50)],
+            "multiplayer": ["2 players", (self.parent_size[0] // 2 - 100, self.parent_size[1] // 2 + 25, 200, 50)]
         }
 
     def event(self, event_list):

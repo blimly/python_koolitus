@@ -2,20 +2,26 @@ import pygame
 
 
 class Snake:
-    def __init__(self, start_x, start_y, game):
+    def __init__(self, start_x, start_y, game, dir, colour):
         self.window_size = game.window_size
         self.size = 20
         self.corner_size = 8
         self.game = game
-        self.location = [(start_x - self.size * i, start_y) for i in range(5)]
-        self.dir = (1, 0)
+        self.location = [(start_x - self.size * i * dir, start_y) for i in range(5)]
+        self.dir = (1 * dir, 0)
         self.apple = None
-        self.body_colour = (0, 0, 200)
+        self.body_colour = colour
         self.corner_names = {  # First is for smooth, second is for rough
             "ul": [(self.corner_size, self.corner_size), (0, 0)],
             "ur": [(self.size - self.corner_size, self.corner_size), (self.size - self.corner_size, 0)],
             "dl": [(self.corner_size, self.size - self.corner_size), (0, self.size - self.corner_size)],
             "dr": [(self.size - self.corner_size, self.size - self.corner_size), (self.size - self.corner_size, self.size - self.corner_size)]
+        }
+        self.dir_names = {
+            "up": (0, -1),
+            "down": (0, 1),
+            "right": (1, 0),
+            "left": (-1, 0)
         }
         self.dir_corners = {
             (0, 1): ["dl", "dr"],
@@ -45,6 +51,11 @@ class Snake:
     @staticmethod
     def dir_reverse(dir):
         return - dir[0], - dir[1]
+
+    def try_turn(self, dir):
+        dir = self.dir_names[dir]
+        if dir[0] + self.dir[0] != 0 or dir[1] + self.dir[1] != 0:
+            self.dir = dir
 
     def update(self):
         next_loc = (self.location[0][0] + self.dir[0] * self.size, self.location[0][1] + self.dir[1] * self.size)
