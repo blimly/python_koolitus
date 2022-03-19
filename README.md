@@ -1,5 +1,5 @@
 # Tasks for INIT
-## Basic tasks
+## Basic tasks 
 - [ ] Snake behind
 - [ ] Changing difficulty
 - [ ] Background
@@ -25,6 +25,8 @@ Add sound effects for when an apple gets eaten and for when the game ends
 Make your background (or some components of it) move
 ### Random trees
 Make the length, width and direction of each child tree vary randomly, to make the trees more organic.
+
+> Bonus points if you record your own sound effects
 
 ## Expert tasks
 - [ ] Pretty snake
