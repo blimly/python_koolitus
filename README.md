@@ -39,3 +39,12 @@ The snake's head and tail need to have a unique appearance and also every turn t
 There should be a menu screen that is open first and from there the user should be able to select different gamemodes (currently there is only one gamemode). Also, when the game ends, then it should come back to the menu screen, not close immediately. It might be a good idea to try to add some new classes for this. If you have music, then the menu screen should have different music than the main game
 ### Add local multiplayer
 There should be 2 snakes, one controlled with arrow keys, one with WASD. Make them different colours and come up with a unique and fun mechanic / logic of what happens when the snakes run into each other
+
+## Helpful links
+#### Sound
+[sfxr](https://sfxr.me/)
+[beepbox](https://www.beepbox.co/)
+
+#### Graphics
+[jspain](https://jspaint.app/)
+[OpenGameArt](https://opengameart.org/)
